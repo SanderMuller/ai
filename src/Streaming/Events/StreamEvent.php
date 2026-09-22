@@ -51,7 +51,7 @@ abstract class StreamEvent implements \Stringable
     /**
      * Set the invocation ID associated with the event.
      */
-    public function withInvocationId(string $id): self
+    public function withInvocationId(string $id): static
     {
         $this->invocationId = $id;
 

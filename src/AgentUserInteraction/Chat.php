@@ -26,7 +26,9 @@ class Chat implements AgentInput
 
         $message = $this->trailingUserMessage();
 
-        return $message === null ? null : AgentUserInteraction::fromMessage($message);
+        $message = $message === null ? null : AgentUserInteraction::fromMessage($message);
+
+        return $message instanceof UserMessage ? $message : null;
     }
 
     /**

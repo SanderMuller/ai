@@ -56,7 +56,7 @@ trait HandlesTextGeneration
                     time(),
                 ))->withInvocationId($invocationId);
 
-                return;
+                return null;
             }
 
             if ($type === 'response.created' && ! $streamStartEmitted) {

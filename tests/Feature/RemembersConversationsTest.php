@@ -8,7 +8,6 @@ use Laravel\Ai\Messages\UserMessage;
 use Laravel\Ai\Prompts\AgentPrompt;
 use Laravel\Ai\Responses\AgentResponse;
 use Tests\Fixtures\Agents\RememberingAssistantAgent;
-use Throwable;
 
 test('it threads the participant type into latestConversationId when continuing the last conversation', function () {
     $participant = new class extends Model

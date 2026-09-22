@@ -118,7 +118,7 @@ class TextResponse implements \Stringable
      *
      * @param  Collection<int, PendingApproval>  $pendingApprovals
      */
-    public function withPendingApprovals(Collection $pendingApprovals): self
+    public function withPendingApprovals(Collection $pendingApprovals): static
     {
         $this->pendingApprovals = $pendingApprovals->values();
 

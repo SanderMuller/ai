@@ -57,7 +57,7 @@ trait HandlesTextStreaming
                     time(),
                 ))->withInvocationId($invocationId);
 
-                return;
+                return null;
             }
 
             if (! $streamStartEmitted) {

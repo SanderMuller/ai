@@ -9,7 +9,6 @@ use Laravel\Ai\Streaming\Events\StreamEnd;
 use Laravel\Ai\Streaming\Events\TextDelta;
 use Laravel\Ai\Streaming\Events\ToolCall as ToolCallEvent;
 use Laravel\Ai\Streaming\Events\ToolResult as ToolResultEvent;
-use RuntimeException;
 
 test('top level text and usage ignore the output a still running tool reported', function (): void {
     $response = new StreamableAgentResponse('invocation-1', fn (): Generator => yield from [

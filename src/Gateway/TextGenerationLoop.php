@@ -290,18 +290,20 @@ class TextGenerationLoop
 
             try {
                 $stepResult = $this->runStep($pending, $middleware, function (PendingStep $step) use ($invocationId, $provider, $previous, $context, $allMessages, $continuationToken, &$attempt): StepResult {
-                    return $attempt = $this->attempt($step, $previous, $allMessages, $continuationToken, $context, fn (StepContext $stepContext): Generator => $this->gateway->generateStreamStep(
-                        $invocationId,
-                        $provider,
-                        $step->model,
-                        $step->instructions,
-                        $step->messages,
-                        $step->tools,
-                        $step->schema,
-                        $step->options,
-                        $step->timeout,
-                        $stepContext,
-                    ));
+                    return $attempt = $this->attempt($step, $previous, $allMessages, $continuationToken, $context, function (StepContext $stepContext) use ($invocationId, $provider, $step) {
+                        return $this->gateway->generateStreamStep(
+                            $invocationId,
+                            $provider,
+                            $step->model,
+                            $step->instructions,
+                            $step->messages,
+                            $step->tools,
+                            $step->schema,
+                            $step->options,
+                            $step->timeout,
+                            $stepContext,
+                        );
+                    });
                 });
 
                 $reasoningDeltas = [];

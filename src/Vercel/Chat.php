@@ -22,7 +22,9 @@ class Chat implements AgentInput
     {
         $message = static::latestOfRole($this->messages, 'user');
 
-        return $message === null ? null : Vercel::fromUiMessage($message);
+        $message = $message === null ? null : Vercel::fromUiMessage($message);
+
+        return $message instanceof UserMessage ? $message : null;
     }
 
     /**

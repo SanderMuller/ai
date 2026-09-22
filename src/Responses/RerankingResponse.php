@@ -40,7 +40,7 @@ class RerankingResponse implements Arrayable, Countable, IteratorAggregate, Json
      */
     public function documents(): Collection
     {
-        return (new Collection($this->results))->map->document;
+        return (new Collection($this->results))->map(fn (RankedDocument $result): string => $result->document);
     }
 
     /**
