@@ -1,6 +1,103 @@
 # Release Notes
 
-## [Unreleased](https://github.com/laravel/ai/compare/v0.11.2...0.x)
+## [Unreleased](https://github.com/laravel/ai/compare/v1.0.0...1.x)
+
+## [v1.0.0](https://github.com/laravel/ai/compare/v0.11.2...v1.0.0) - 2026-09-23
+
+### What's Changed
+
+* Sync Base Brance by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/898
+* Sync 0.x by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/907
+* Sync 0.x by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/916
+* Sync 0.x by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/922
+* Add withProviderOptions support to the image builder by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/899
+* Add withProviderOptions support to the audio builder by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/900
+* Add withProviderOptions support to the reranking builder by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/901
+* Add an ai_sdk_extra_headers provider option for custom HTTP headers by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/904
+* Add AG-UI protocol streaming by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/913
+* Rename Agent User Interaction protocol by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/948
+* Allow runtime tool overrides via withTools by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/956
+* [1.x] Stop proxies buffering native streamed responses by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/960
+* [1.x] Add a continueOrStart() shortcut by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/962
+* [1.x] Report the conversation rows a turn wrote by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/961
+* Scope continueLastConversation to the agent by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/972
+* [1.x] Report the persisted message id on RUN_FINISHED by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/976
+* [1.x] Report how a tool call ended on TOOL_CALL_RESULT by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/977
+* Support hosted code execution as a provider tool by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/970
+* Exclude cached tokens from the reported prompt token count on the Groq and OpenAI-compatible providers by [@sulimanbenhalim](https://github.com/sulimanbenhalim) in https://github.com/laravel/ai/pull/909
+* Accept every storable image type in OpenAI image edits by [@saifulferoz](https://github.com/saifulferoz) in https://github.com/laravel/ai/pull/893
+* Fix Gemini file import operation handling by [@drewmt](https://github.com/drewmt) in https://github.com/laravel/ai/pull/821
+* [1.x] Report the prompt's stored row on RUN_FINISHED by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/989
+* [1.x] Report a step's text as one message, not one per content block by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/988
+* [0.x] Combine streamed text by step rather than by message ID by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/987
+* [1.x] Persist the reasoning a turn produced by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/975
+* [1.x] Report why a resume was rejected on RUN_ERROR by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/978
+* [0.x] Add conversation pagination by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/990
+* [0.x] Persist the sources a streamed answer cited by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/991
+* Simplify provider options and stream protocol plumbing by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/963
+* Convert AG-UI run input into agent chat input by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/964
+* [0.x] Expose the tool calls a paused conversation is waiting on by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/992
+* [0.x] Expose whether a conversation belongs to a participant by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/993
+* Add AG-UI approval interrupts and snapshot hydration to streams by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/965
+* [1.x] Wrap each generation step in agent middleware by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/979
+* [1.x] Thread request timeouts through reranking, image, and transcription by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/994
+* Stream sub-agent activity by default by [@gracjankubicki](https://github.com/gracjankubicki) in https://github.com/laravel/ai/pull/802
+* Read Cohere Bedrock embeddings input token count from response header by [@serpentblade](https://github.com/serpentblade) in https://github.com/laravel/ai/pull/914
+* Read the cumulative usage reported on Anthropic message_delta by [@goatrenterguy](https://github.com/goatrenterguy) in https://github.com/laravel/ai/pull/996
+* Fix xAI and OpenRouter dropping filename for unnamed documents by [@yognevoy](https://github.com/yognevoy) in https://github.com/laravel/ai/pull/1001
+* Add OpenRouter reranking support by [@ilogus](https://github.com/ilogus) in https://github.com/laravel/ai/pull/999
+* Unescape slashes when encoding structured MCP tool output by [@yognevoy](https://github.com/yognevoy) in https://github.com/laravel/ai/pull/997
+* feat: add audio input for OpenRouter by [@davidafsoty](https://github.com/davidafsoty) in https://github.com/laravel/ai/pull/998
+* Make the AWS SDK an optional dependency of the Bedrock provider by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1003
+* [1.x] Store a user message before a provider is chosen by [@pascalbaljet](https://github.com/pascalbaljet) in https://github.com/laravel/ai/pull/1005
+* Replay earlier tool steps ahead of a paused step's provider blocks by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/995
+* fix(anthropic): report thinking tokens in usage by [@DGarbs51](https://github.com/DGarbs51) in https://github.com/laravel/ai/pull/1006
+* Hoist every top level Gemini request field out of generationConfig by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1015
+* Use PHP_EOL for multi-line string assertion in test by [@GeorgeBetts](https://github.com/GeorgeBetts) in https://github.com/laravel/ai/pull/1016
+* Add coverage for cached and reasoning tokens in xAI response usage by [@dfinchenko](https://github.com/dfinchenko) in https://github.com/laravel/ai/pull/1008
+* Add coverage for the cache token counters on Anthropic responses by [@dfinchenko](https://github.com/dfinchenko) in https://github.com/laravel/ai/pull/1009
+* Add support for inline document attachment for Mistral Provider by [@GeorgeBetts](https://github.com/GeorgeBetts) in https://github.com/laravel/ai/pull/1017
+* [1.x] Return all generated images from xAI when `n` is greater than one by [@mssayari](https://github.com/mssayari) in https://github.com/laravel/ai/pull/1019
+* Populate response reasoning on non-streamed prompts by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1020
+* Report inclusive input and output tokens on the usage value object by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1021
+* Add TypeSafe AI classification by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1010
+* Remove the ai_sdk_extra_headers provider option by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1026
+* Preserve Gemini thought signatures across persisted tool conversations by [@sulimanbenhalim](https://github.com/sulimanbenhalim) in https://github.com/laravel/ai/pull/837
+* [1.x] Report usage on audio responses by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1029
+* [1.x] Report embeddings usage as a usage object by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1028
+* Retain OpenAI replay blocks regardless of the store setting by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1034
+* [1.x] Split text-only usage counts into a TextUsage subclass by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1030
+* [1.x] Report image token details on image responses by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1024
+* [1.x] Report the transcribed audio duration on transcription responses by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1025
+* [1.x] Report usage on reranking responses by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1027
+* Store conversation turns as steps by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1035
+* Replay provider reasoning state only within the open turn by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1036
+* Persist provider-hosted tool calls on each step by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1032
+* Add OpenRouter file gateway by [@bram-pkg](https://github.com/bram-pkg) in https://github.com/laravel/ai/pull/1043
+* Resolve approval results without matching the paused turn's participant by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1046
+* Fold an approved resume into the turn it paused on by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1045
+* Add OpenRouter classification gateway by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1044
+* Replace the turn's approval timestamp with a message status column by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1050
+* Keep an OpenAI function call item id only beside its reasoning by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1052
+* Persist the steps a turn completed before it failed by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1051
+* Add a decide string macro for boolean classification by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1049
+* Move Gemini to the Interactions API by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1056
+* Default OpenAI to GPT-6 and Anthropic smartest to Opus 5.5 by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1058
+* Add the 1.0 upgrade guide by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/ai/pull/1002
+
+### New Contributors
+
+* [@pascalbaljet](https://github.com/pascalbaljet) made their first contribution in https://github.com/laravel/ai/pull/960
+* [@saifulferoz](https://github.com/saifulferoz) made their first contribution in https://github.com/laravel/ai/pull/893
+* [@goatrenterguy](https://github.com/goatrenterguy) made their first contribution in https://github.com/laravel/ai/pull/996
+* [@yognevoy](https://github.com/yognevoy) made their first contribution in https://github.com/laravel/ai/pull/1001
+* [@ilogus](https://github.com/ilogus) made their first contribution in https://github.com/laravel/ai/pull/999
+* [@davidafsoty](https://github.com/davidafsoty) made their first contribution in https://github.com/laravel/ai/pull/998
+* [@GeorgeBetts](https://github.com/GeorgeBetts) made their first contribution in https://github.com/laravel/ai/pull/1016
+* [@mssayari](https://github.com/mssayari) made their first contribution in https://github.com/laravel/ai/pull/1019
+* [@bram-pkg](https://github.com/bram-pkg) made their first contribution in https://github.com/laravel/ai/pull/1043
+
+**Full Changelog**: https://github.com/laravel/ai/compare/v0.11.2...v1.0.0
 
 ## [v0.11.2](https://github.com/laravel/ai/compare/v0.11.1...v0.11.2) - 2026-09-03
 
